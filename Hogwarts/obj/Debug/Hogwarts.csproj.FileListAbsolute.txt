@@ -1,0 +1,8 @@
+D:\C#\cods\Project\Hogwarts\Hogwarts\bin\Debug\Hogwarts.exe.config
+D:\C#\cods\Project\Hogwarts\Hogwarts\bin\Debug\Hogwarts.exe
+D:\C#\cods\Project\Hogwarts\Hogwarts\bin\Debug\Hogwarts.pdb
+D:\C#\cods\Project\Hogwarts\Hogwarts\obj\Debug\Hogwarts.csproj.AssemblyReference.cache
+D:\C#\cods\Project\Hogwarts\Hogwarts\obj\Debug\Hogwarts.csproj.SuggestedBindingRedirects.cache
+D:\C#\cods\Project\Hogwarts\Hogwarts\obj\Debug\Hogwarts.csproj.CoreCompileInputs.cache
+D:\C#\cods\Project\Hogwarts\Hogwarts\obj\Debug\Hogwarts.exe
+D:\C#\cods\Project\Hogwarts\Hogwarts\obj\Debug\Hogwarts.pdb
