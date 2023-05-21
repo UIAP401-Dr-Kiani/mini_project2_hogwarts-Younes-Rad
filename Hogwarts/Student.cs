@@ -13,12 +13,10 @@ namespace Hogwarts
         public long khabgahNumber { get; set; }
         public string RecivedLetter { get; set; }
 
-        public string EducationPlanOfStudent { get; set; }
         public string Group { get; set; }
 
+        public string Grade { get; set; }
         public string LetterResult { get; set; }
-
-        
 
 
         public Student() 
@@ -38,7 +36,8 @@ namespace Hogwarts
             Role = role;
         }
         
-       
+
+
 
         public static void SetTermNumber()
         {
@@ -167,88 +166,6 @@ namespace Hogwarts
             Console.ReadKey();
         }
            
-
-         public static void SetEducationPlanForFirstSemesterStudents()
-         {
-            Console.Clear();
-           
-           
-
-            List<Teacher> Chemistry1Teachers = new List<Teacher>();
-            List<Teacher> MagicLearning1Teachers = new List<Teacher>();
-            List<Teacher> Phytology1Teachers = new List<Teacher>();
-            List<Teacher> Sport1Teachers = new List<Teacher>();
-            List<Teacher> Astronomy1Teachers = new List<Teacher>();
-
-
-            for (int i = 0; i < Program.teacherlist.Count; i++)
-            {
-               if( Program.teacherlist[i].TeacherLesson == "Chemistry1")
-                {
-                    Chemistry1Teachers.Add(Program.teacherlist[i]);
-                }else if (Program.teacherlist[i].TeacherLesson == "MagicLearning1")
-                {
-                    MagicLearning1Teachers.Add(Program.teacherlist[i]);
-                }else if (Program.teacherlist[i].TeacherLesson == "Phytology1")
-                {
-                    Phytology1Teachers.Add(Program.teacherlist[i]);
-                }else if (Program.teacherlist[i].TeacherLesson == "Sport1")
-                {
-                    Sport1Teachers.Add(Program.teacherlist[i]);
-                }else if (Program.teacherlist[i].TeacherLesson == "Astronomy1")
-                {
-                    Astronomy1Teachers.Add(Program.teacherlist[i]);
-                }
-
-           }
-
-            for (int j = 0; j < 55 ; j++)
-            {
-                if (j < 15)
-                {
-                    Program.studentList[j].StudentEducationPlan =
-                                      Chemistry1Teachers[0].TeacherEducationPlan + "\tTeacher : " + Chemistry1Teachers[0].FirstName + "  " + Chemistry1Teachers[0].Lastname + "\n" +
-                                      MagicLearning1Teachers[0].TeacherEducationPlan + "\tTeacher : " + MagicLearning1Teachers[0].FirstName + "  " + MagicLearning1Teachers[0].Lastname + "\n" +
-                                      Phytology1Teachers[0].TeacherEducationPlan + "\tTeacher : " + Phytology1Teachers[0].FirstName + "  " + Phytology1Teachers[0].Lastname + "\n" +
-                                      Astronomy1Teachers[0].TeacherEducationPlan + "\tTeacher : " + Astronomy1Teachers[0].FirstName + "  " + Astronomy1Teachers[0].Lastname + "\n" +
-                                      Sport1Teachers[0].TeacherEducationPlan + "\tTeacher : " + Sport1Teachers[0].FirstName + "  " + Sport1Teachers[0].Lastname + "\n";
-                }
-                else if (j < 30)
-                {
-                    Program.studentList[j].StudentEducationPlan =
-                                      Chemistry1Teachers[1].TeacherEducationPlan + "\tTeacher : " + Chemistry1Teachers[1].FirstName + "  " + Chemistry1Teachers[1].Lastname + "\n" +
-                                      MagicLearning1Teachers[1].TeacherEducationPlan + "\tTeacher : " + MagicLearning1Teachers[1].FirstName + "  " + MagicLearning1Teachers[1].Lastname + "\n" +
-                                      Phytology1Teachers[1].TeacherEducationPlan + "\tTeacher : " + Phytology1Teachers[1].FirstName + "  " + Phytology1Teachers[1].Lastname + "\n" +
-                                      Astronomy1Teachers[1].TeacherEducationPlan + "\tTeacher : " + Astronomy1Teachers[1].FirstName + "  " + Astronomy1Teachers[1].Lastname + "\n" +
-                                      Sport1Teachers[1].TeacherEducationPlan + "\tTeacher : " + Sport1Teachers[1].FirstName + "  " + Sport1Teachers[1].Lastname + "\n";
-                }
-                else if (j < 45)
-                {
-                    Program.studentList[j].StudentEducationPlan =
-                                      Chemistry1Teachers[2].TeacherEducationPlan + "\tTeacher : " + Chemistry1Teachers[2].FirstName + "  " + Chemistry1Teachers[2].Lastname + "\n" +
-                                      MagicLearning1Teachers[2].TeacherEducationPlan + "\tTeacher : " + MagicLearning1Teachers[2].FirstName + "  " + MagicLearning1Teachers[2].Lastname + "\n" +
-                                      Phytology1Teachers[2].TeacherEducationPlan + "\tTeacher : " + Phytology1Teachers[2].FirstName + "  " + Phytology1Teachers[2].Lastname + "\n" +
-                                      Astronomy1Teachers[2].TeacherEducationPlan + "\tTeacher : " + Astronomy1Teachers[2].FirstName + "  " + Astronomy1Teachers[2].Lastname + "\n" +
-                                      Sport1Teachers[2].TeacherEducationPlan + "\tTeacher : " + Sport1Teachers[2].FirstName + "  " + Sport1Teachers[2].Lastname + "\n";
-                }
-                else if (j < 55)
-                {
-                    Program.studentList[j].StudentEducationPlan =
-                                      Chemistry1Teachers[3].TeacherEducationPlan + "\tTeacher : " + Chemistry1Teachers[3].FirstName + "  " + Chemistry1Teachers[3].Lastname + "\n" +
-                                      MagicLearning1Teachers[3].TeacherEducationPlan + "\tTeacher : " + MagicLearning1Teachers[3].FirstName + "  " + MagicLearning1Teachers[3].Lastname + "\n" +
-                                      Phytology1Teachers[3].TeacherEducationPlan + "\tTeacher : " + Phytology1Teachers[3].FirstName + "  " + Phytology1Teachers[3].Lastname + "\n" +
-                                      Astronomy1Teachers[3].TeacherEducationPlan + "\tTeacher : " + Astronomy1Teachers[3].FirstName + "  " + Astronomy1Teachers[3].Lastname + "\n" +
-                                      Sport1Teachers[3].TeacherEducationPlan + "\tTeacher : " + Sport1Teachers[3].FirstName + "  " + Sport1Teachers[3].Lastname + "\n";
-                }
-
-
-                Console.WriteLine(Program.studentList[j].FirstName +" " + Program.studentList[j].Lastname + "  plan is :\n " +
-                                  "----------------------------------- \n" + Program.studentList[j].StudentEducationPlan);
-             
-                Console.ReadKey();
-            }
-        }
-
 
         public static void SetEducationPlanForStudentsByHand()// by hand 
         {
@@ -429,83 +346,480 @@ namespace Hogwarts
         }
 
 
-        public static void SetListLesson()
+        public static void SetEducationPlanForFirstSemesterStudents()
         {
+            Console.Clear();
 
-            for (int i = 0; i < Program.teacherlist.Count; i++)
+
+            for (int j = 0; j < 55; j++)
             {
-                if (Program.teacherlist[i].TeacherLesson == "Chemistry2")
+                if (j < 15)
                 {
-                    Teacher.Chemistry2Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry1Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning1Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology1Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy1Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport1Teachers[0].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry1Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry1Teachers[0].ClassCapacity += 1;
+
+                    Teacher.MagicLearning1Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning1Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Phytology1Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology1Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Astronomy1Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy1Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Sport1Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport1Teachers[0].ClassCapacity += 1;
+
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "MagicLearning2")
+                else if (j < 30)
                 {
-                    Teacher.MagicLearning2Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry1Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning1Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology1Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy1Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport1Teachers[1].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry1Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry1Teachers[1].ClassCapacity += 1;
+
+                    Teacher.MagicLearning1Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning1Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Phytology1Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology1Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Astronomy1Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy1Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Sport1Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport1Teachers[1].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Phytology2")
+                else if (j < 45)
                 {
-                    Teacher.Phytology2Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry1Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning1Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology1Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy1Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport1Teachers[2].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry1Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry1Teachers[2].ClassCapacity += 2;
+
+                    Teacher.MagicLearning1Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning1Teachers[2].ClassCapacity += 2;
+
+                    Teacher.Phytology1Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology1Teachers[2].ClassCapacity += 2;
+
+                    Teacher.Astronomy1Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy1Teachers[2].ClassCapacity += 2;
+
+                    Teacher.Sport1Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport1Teachers[2].ClassCapacity += 2;
+
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Sport2")
+                else if (j < 55)
                 {
-                    Teacher.Sport2Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry1Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning1Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology1Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy1Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport1Teachers[3].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry1Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry1Teachers[3].ClassCapacity += 1;
+
+                    Teacher.MagicLearning1Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning1Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Phytology1Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology1Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Astronomy1Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy1Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Sport1Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport1Teachers[3].ClassCapacity += 1;
+
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Astronomy2")
-                {
-                    Teacher.Astronomy2Teachers.Add(Program.teacherlist[i]);
-                }
+
+
+                Console.WriteLine(Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "  plan is :\n " +
+                                   "----------------------------------- \n" + Program.studentList[j].StudentEducationPlan);
             }
 
-            for (int i = 0; i < Program.teacherlist.Count; i++)
+            Console.ReadKey();
+        }
+        public static void SetPlanForTerm2ByDefult()
+        {
+            Console.Clear();
+            for (int j = 55; j < 110; j++)
             {
-                if (Program.teacherlist[i].TeacherLesson == "Chemistry3")
+                if (j < 70)
                 {
-                    Teacher.Chemistry3Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry2Teachers[0].TeacherEducationPlan +  "\n" +
+                                      Teacher.MagicLearning2Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology2Teachers[0].TeacherEducationPlan +  "\n" +
+                                      Teacher.Astronomy2Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport2Teachers[0].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry2Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry2Teachers[0].ClassCapacity += 1;
+
+                    Teacher.MagicLearning2Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning2Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Phytology2Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology2Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Astronomy2Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy2Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Sport2Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport2Teachers[0].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "MagicLearning3")
+                else if (j < 85)
                 {
-                    Teacher.MagicLearning3Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry2Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning2Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology2Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy2Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport2Teachers[1].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry2Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry2Teachers[1].ClassCapacity += 1;
+
+                    Teacher.MagicLearning2Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning2Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Phytology2Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology2Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Astronomy2Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy2Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Sport2Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport2Teachers[1].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Phytology3")
+                else if (j < 100)
                 {
-                    Teacher.Phytology3Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry2Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning2Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology2Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy2Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport2Teachers[2].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry2Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry2Teachers[2].ClassCapacity += 1;
+
+                    Teacher.MagicLearning2Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning2Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Phytology2Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology2Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Astronomy2Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy2Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Sport2Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport2Teachers[2].ClassCapacity += 1;
+
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Sport3")
+                else if (j < 110)
                 {
-                    Teacher.Sport3Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry2Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning2Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology2Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy2Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport2Teachers[3].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry2Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry2Teachers[3].ClassCapacity += 1;
+
+                    Teacher.MagicLearning2Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning2Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Phytology2Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology2Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Astronomy2Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy2Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Sport2Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport2Teachers[3].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Astronomy3")
-                {
-                    Teacher.Astronomy3Teachers.Add(Program.teacherlist[i]);
-                }
+
+
+                Console.WriteLine(Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "  plan is :\n " +
+                                   "----------------------------------- \n" + Program.studentList[j].StudentEducationPlan);
             }
 
-            for (int i = 0; i < Program.teacherlist.Count; i++)
+            Console.WriteLine(" -------------------------- term 2 students received programs ------------------------");
+            Console.WriteLine(" press any key to continue Procses ");
+            Console.ReadKey();
+        }
+        public static void SetPlanForTerm3ByDefult()
+        {
+            Console.Clear();
+            for (int j = 110; j < 165; j++)
             {
-                if (Program.teacherlist[i].TeacherLesson == "Chemistry4")
+                if (j < 125)
                 {
-                    Teacher.Chemistry4Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry3Teachers[0].TeacherEducationPlan +  "\n" +
+                                      Teacher.MagicLearning3Teachers[0].TeacherEducationPlan +  "\n" +
+                                      Teacher.Phytology3Teachers[0].TeacherEducationPlan +  "\n" +
+                                      Teacher.Astronomy3Teachers[0].TeacherEducationPlan +  "\n" +
+                                      Teacher.Sport3Teachers[0].TeacherEducationPlan +  "\n";
+
+                    Teacher.Chemistry3Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry3Teachers[0].ClassCapacity += 1;
+
+                    Teacher.MagicLearning3Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning3Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Phytology3Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology3Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Astronomy3Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy3Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Sport3Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport3Teachers[0].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "MagicLearning4")
+                else if (j < 140)
                 {
-                    Teacher.MagicLearning4Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry3Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning3Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology3Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy3Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport3Teachers[1].TeacherEducationPlan +  "\n";
+
+                    Teacher.Chemistry3Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry3Teachers[1].ClassCapacity += 1;
+
+                    Teacher.MagicLearning3Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning3Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Phytology3Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology3Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Astronomy3Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy3Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Sport3Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport3Teachers[1].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Phytology4")
+                else if (j < 155)
                 {
-                    Teacher.Phytology4Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry3Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning3Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology3Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy3Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport3Teachers[2].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry3Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry3Teachers[2].ClassCapacity += 1;
+
+                    Teacher.MagicLearning3Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning3Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Phytology3Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology3Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Astronomy3Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy3Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Sport3Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport3Teachers[2].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Sport4")
+                else if (j < 165)
                 {
-                    Teacher.Sport4Teachers.Add(Program.teacherlist[i]);
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry3Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning3Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology3Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy3Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport3Teachers[3].TeacherEducationPlan + "\n";
+
+                    Teacher.Chemistry3Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry3Teachers[3].ClassCapacity += 1;
+
+                    Teacher.MagicLearning3Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning3Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Phytology3Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology3Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Astronomy3Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy3Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Sport3Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport3Teachers[3].ClassCapacity += 1;
                 }
-                else if (Program.teacherlist[i].TeacherLesson == "Astronomy4")
-                {
-                    Teacher.Astronomy4Teachers.Add(Program.teacherlist[i]);
-                }
+
+
+                Console.WriteLine(Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "  plan is :\n " +
+                                   "----------------------------------- \n" + Program.studentList[j].StudentEducationPlan);
             }
 
+            Console.WriteLine(" -------------------------- term 3 students received programs ------------------------");
+            Console.WriteLine(" press any key to continue Procses ");
+            Console.ReadKey();
+        }
+        public static void SetPlanForTerm4ByDefult() 
+        {
+            Console.Clear();
+            for (int j = 165; j < 220; j++)
+            {
+                if (j < 180)
+                {
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry4Teachers[0].TeacherEducationPlan +  "\n" +
+                                      Teacher.MagicLearning4Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology4Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy4Teachers[0].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport4Teachers[0].TeacherEducationPlan +  "\n";
+
+                    Teacher.Chemistry4Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry4Teachers[0].ClassCapacity += 1;
+
+                    Teacher.MagicLearning4Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning4Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Phytology4Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology4Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Astronomy4Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy4Teachers[0].ClassCapacity += 1;
+
+                    Teacher.Sport4Teachers[0].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport4Teachers[0].ClassCapacity += 1;
+
+                }
+                else if (j < 195)
+                {
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry4Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning4Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology4Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy4Teachers[1].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport4Teachers[1].TeacherEducationPlan +  "\n";
+
+                    Teacher.Chemistry4Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry4Teachers[1].ClassCapacity += 1;
+
+                    Teacher.MagicLearning4Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning4Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Phytology4Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology4Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Astronomy4Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy4Teachers[1].ClassCapacity += 1;
+
+                    Teacher.Sport4Teachers[1].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport4Teachers[1].ClassCapacity += 1;
+                }
+                else if (j < 210)
+                {
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry4Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.MagicLearning3Teachers[2].TeacherEducationPlan + "\n" +
+                                      Teacher.Phytology4Teachers[2].TeacherEducationPlan +  "\n" +
+                                      Teacher.Astronomy4Teachers[2].TeacherEducationPlan +  "\n" +
+                                      Teacher.Sport4Teachers[2].TeacherEducationPlan +  "\n";
+
+                    Teacher.Chemistry4Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry4Teachers[2].ClassCapacity += 1;
+
+                    Teacher.MagicLearning4Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning4Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Phytology4Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology4Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Astronomy4Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy4Teachers[2].ClassCapacity += 1;
+
+                    Teacher.Sport4Teachers[2].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport4Teachers[2].ClassCapacity += 1;
+                }
+                else if (j < 220)
+                {
+                    Program.studentList[j].StudentEducationPlan =
+                                      Teacher.Chemistry4Teachers[3].TeacherEducationPlan +  "\n" +
+                                      Teacher.MagicLearning3Teachers[3].TeacherEducationPlan +  "\n" +
+                                      Teacher.Phytology4Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Astronomy4Teachers[3].TeacherEducationPlan + "\n" +
+                                      Teacher.Sport4Teachers[3].TeacherEducationPlan +  "\n";
+
+                    Teacher.Chemistry4Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Chemistry4Teachers[3].ClassCapacity += 1;
+
+                    Teacher.MagicLearning4Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.MagicLearning4Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Phytology4Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Phytology4Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Astronomy4Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Astronomy4Teachers[3].ClassCapacity += 1;
+
+                    Teacher.Sport4Teachers[3].ClassMember += Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "\n";
+                    Teacher.Sport4Teachers[3].ClassCapacity += 1;
+                }
+
+
+                Console.WriteLine(Program.studentList[j].FirstName + " " + Program.studentList[j].Lastname + "  plan is :\n " +
+                                   "----------------------------------- \n" + Program.studentList[j].StudentEducationPlan);
+            }
+
+            Console.WriteLine(" -------------------------- term 4 students received programs ------------------------");
+            Console.WriteLine(" press any key to continue Procses ");
+            Console.ReadKey();
 
         }
+
+
+
+        public static void viewGrade()
+        {
+            Console.Clear();
+            int index = Program.studentList.FindIndex(user => user.UserName == ProgramUi.UsernameSever && user.PassWord == ProgramUi.PasswordSever);
+
+            Console.WriteLine(Program.studentList[index].Grade + "\n Passed units :" + Program.studentList[index].passedUnit);
+
+            Console.ReadKey();
+        }
+
+
+        public static void viewStudentPlan()
+        {
+            Console.Clear();
+            int index = Program.studentList.FindIndex(user => user.UserName == ProgramUi.UsernameSever && user.PassWord == ProgramUi.PasswordSever);
+
+            Console.WriteLine(Program.studentList[index].StudentEducationPlan );
+
+            Console.ReadKey();
+        }
+
     }
 }
 //Random rand = new Random();

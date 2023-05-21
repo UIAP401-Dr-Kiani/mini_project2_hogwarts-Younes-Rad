@@ -62,8 +62,7 @@ namespace Hogwarts
             Console.WriteLine(" ----------------------- Teacher Panel -----------------------");
 
             Console.WriteLine("1 ) view unit EducationPlan ");
-            Console.WriteLine("2 ) Grading students ");
-            Console.WriteLine("3 ) Back to the main menu ");
+            Console.WriteLine("2 ) Back to the main menu ");
 
             Console.Write($" Enter Panel Number  : ");
             return Convert.ToInt32(Console.ReadLine());
@@ -106,7 +105,7 @@ namespace Hogwarts
         {
             Console.Clear();
 
-            if (help1 == 1 && help2 == 1)
+            if (Travelcondition1 == 1 && Travelcondition2 == 1)
             {
                 Random rand = new Random();
                 List<string> Move1 = new List<string>();
@@ -184,9 +183,7 @@ namespace Hogwarts
             Console.WriteLine("3 ) Students Panel ");
 
 
-
-            Console.WriteLine("\n4 ) Going to the next semester");
-            Console.WriteLine("5 ) Exit the program ");
+            Console.WriteLine("\n5 ) Exit the program ");
             Console.Write($" Enter Panel Number  : ");
             return Convert.ToInt32(Console.ReadLine());
         }
@@ -197,10 +194,10 @@ namespace Hogwarts
             Console.WriteLine(" ----------------------- Dumbledore Panel -----------------------");
 
             Console.WriteLine("1 ) answering to received messages from students ");
-            Console.WriteLine("2 ) ");
+            //Console.WriteLine("2 ) ");
 
-            Console.WriteLine("4 ) Display student information ");
-            Console.WriteLine("5 ) Back to the main menu ");
+            //Console.WriteLine("4 ) Display student information ");
+            Console.WriteLine("2) Back to the main menu ");
             Console.Write($" Enter Panel Number  : ");
             return Convert.ToInt32(Console.ReadLine());
 
@@ -215,9 +212,8 @@ namespace Hogwarts
             Console.WriteLine("2 ) The result of the sent message");
             Console.WriteLine("3 ) Education Plan ");
             Console.WriteLine("4 ) View Grades ");
-            Console.WriteLine("5 ) Display student information ");
 
-            Console.WriteLine("6 ) Back to the main menu ");
+            Console.WriteLine("5 ) Back to the main menu ");
 
             Console.Write($" Enter Panel Number  : ");
             return Convert.ToInt32(Console.ReadLine());
@@ -274,7 +270,7 @@ namespace Hogwarts
         public static bool TeacherLoginMethod()
         {
             Console.Clear();
-            Console.WriteLine("\n Enter the Teacher username and password ");
+            Console.WriteLine("Enter the Teacher username and password ");
             Console.Write(" Enter Your Username : ");
             string username = Console.ReadLine();
             Console.Write(" Enter Your Password : ");
@@ -306,7 +302,7 @@ namespace Hogwarts
             Console.Write(" Enter Your Password : ");
             string password = Console.ReadLine();
 
-            if (username == "admin" && password == "admin")
+            if (username == Dumbledore.Admin.UserName && password == Dumbledore.Admin.PassWord)
             {
                 Console.WriteLine(" login succeesfully ");
                 Console.ReadKey();
@@ -337,8 +333,13 @@ namespace Hogwarts
 
 
 
-        public static int help1 = 2;
-        public static int help2 = 2;
+        public static int Travelcondition1 = 2;
+        public static int Travelcondition2 = 2;
+
+        public static bool StartYearcondition1 = false;
+        public static bool StartYearcondition2 = false;
+
+
 
         // part 1 : send and recive letters 
         public static void SendMessagesForAcceptedStudents()
@@ -368,12 +369,12 @@ namespace Hogwarts
 
             Console.WriteLine("press any key to continue ");
             Console.ReadKey();
-            help1 = 1;
+            Travelcondition1 = 1;
          
         }
         public static void ReceivedmessagesfromDumbledor()
         {
-            if (help1 == 1)
+            if (Travelcondition1 == 1)
             {
                 if (Program.studentList.Any(p => p.UserName.Equals(UsernameSever) && p.PassWord.Equals(PasswordSever)))
                 {
@@ -394,6 +395,10 @@ namespace Hogwarts
 
 
         // part 3 : send and recive letters 
+
+        public static List<string> RecivedLetterFromStudents = new List<string>();
+        public static List<int> usernameSeverList = new List<int>();
+
         public static void SendMessagesForDumbledor()
         {
             Console.Clear();
@@ -443,38 +448,14 @@ namespace Hogwarts
             Console.ReadKey();
         }
 
-
-        public static List<string> RecivedLetterFromStudents = new List<string>();
-        public static List<int> usernameSeverList = new List<int>();
+      
 
 
+    
 
 
 
-       
-
-
-        public static void EducationPlanOfTeacher()
-        {
-            Console.Clear();
-
-            if (help2 == 1)
-            {
-                if (Program.teacherlist.Any(p => p.UserName.Equals(TeacherUserSever) && p.PassWord.Equals(TeacherPasswordSever)))
-                {
-                    Console.Clear();
-                    int t2 = Program.teacherlist.FindIndex(user => user.UserName == TeacherUserSever && user.PassWord == TeacherPasswordSever);
-                    Console.WriteLine(" Teacher :  " + Program.teacherlist[t2].FirstName + " " + Program.teacherlist[t2].Lastname + "\n your EducationPlan : " + Program.teacherlist[t2].TeacherEducationPlan);
-                }
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Dumbledore did not set any plan for you !! ");
-
-            }
-            Console.ReadKey();
-        }
+      
 
 
     }

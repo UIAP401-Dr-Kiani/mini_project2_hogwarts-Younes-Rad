@@ -9,13 +9,15 @@ namespace Hogwarts
     internal class Dumbledore : AllowedPerson
     {
 
-        
-       
+        public static readonly Dumbledore Admin = new Dumbledore();
 
-        // اینستنس از کلاس خوابگاه
+        private Dumbledore() { }
+
+
+
 
     }
 
-    
+
 
 }

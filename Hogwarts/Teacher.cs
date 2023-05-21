@@ -15,6 +15,9 @@ namespace Hogwarts
 
         public int ClassCapacity { get; set; }
 
+        public string ClassMember { get; set; }
+
+
 
         public Teacher() { }
         public Teacher(string firsname, string lastname, string dateofbithday, string gender,
@@ -56,6 +59,7 @@ namespace Hogwarts
         public static List<Teacher> Phytology4Teachers = new List<Teacher>();
         public static List<Teacher> Sport4Teachers = new List<Teacher>();
         public static List<Teacher> Astronomy4Teachers = new List<Teacher>();
+
 
 
 
@@ -168,10 +172,12 @@ namespace Hogwarts
                 }
                 if (72 <= i && i < 80)
                 {
-                    l2 = SportClasses[i - 72]; 
+                    l2 = SportClasses[i - 72];
                 }
-               
-                Program.teacherlist[i].TeacherEducationPlan = $" Teacher : {Program.teacherlist[i].FirstName}  {Program.teacherlist[i].Lastname}   " +  l2.lessonName + "    " + l2.lessonTime ;
+                //$" Teacher : {Program.teacherlist[i].FirstName}  {Program.teacherlist[i].Lastname}
+
+
+                Program.teacherlist[i].TeacherEducationPlan = $" Teacher : {Program.teacherlist[i].FirstName}  {Program.teacherlist[i].Lastname}  " +  l2.lessonName + "    " + l2.lessonTime ;
                 Program.teacherlist[i].TeacherLesson = l2.lessonName;
             }
 
@@ -183,6 +189,188 @@ namespace Hogwarts
             Console.ReadKey();
         }
 
+        public static void MakeListLesson()
+        {
+            for (int i = 0; i < Program.teacherlist.Count; i++)
+            {
+                if (Program.teacherlist[i].TeacherLesson == "Chemistry1")
+                {
+                    Teacher.Chemistry1Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "MagicLearning1")
+                {
+                    Teacher.MagicLearning1Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Phytology1")
+                {
+                    Teacher.Phytology1Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Sport1")
+                {
+                    Teacher.Sport1Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Astronomy1")
+                {
+                    Teacher.Astronomy1Teachers.Add(Program.teacherlist[i]);
+                }
+
+            }
+
+            for (int i = 0; i < Program.teacherlist.Count; i++)
+            {
+                if (Program.teacherlist[i].TeacherLesson == "Chemistry2")
+                {
+                    Teacher.Chemistry2Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "MagicLearning2")
+                {
+                    Teacher.MagicLearning2Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Phytology2")
+                {
+                    Teacher.Phytology2Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Sport2")
+                {
+                    Teacher.Sport2Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Astronomy2")
+                {
+                    Teacher.Astronomy2Teachers.Add(Program.teacherlist[i]);
+                }
+            }
+
+            for (int i = 0; i < Program.teacherlist.Count; i++)
+            {
+                if (Program.teacherlist[i].TeacherLesson == "Chemistry3")
+                {
+                    Teacher.Chemistry3Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "MagicLearning3")
+                {
+                    Teacher.MagicLearning3Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Phytology3")
+                {
+                    Teacher.Phytology3Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Sport3")
+                {
+                    Teacher.Sport3Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Astronomy3")
+                {
+                    Teacher.Astronomy3Teachers.Add(Program.teacherlist[i]);
+                }
+            }
+
+            for (int i = 0; i < Program.teacherlist.Count; i++)
+            {
+                if (Program.teacherlist[i].TeacherLesson == "Chemistry4")
+                {
+                    Teacher.Chemistry4Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "MagicLearning4")
+                {
+                    Teacher.MagicLearning4Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Phytology4")
+                {
+                    Teacher.Phytology4Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Sport4")
+                {
+                    Teacher.Sport4Teachers.Add(Program.teacherlist[i]);
+                }
+                else if (Program.teacherlist[i].TeacherLesson == "Astronomy4")
+                {
+                    Teacher.Astronomy4Teachers.Add(Program.teacherlist[i]);
+                }
+            }
+
+
+        }
+
+        public static void EducationPlanOfTeacher()
+        {
+            Console.Clear();
+
+            if (ProgramUi.Travelcondition2 == 1)
+            {
+                if (Program.teacherlist.Any(p => p.UserName.Equals(ProgramUi.TeacherUserSever) && p.PassWord.Equals(ProgramUi.TeacherPasswordSever)))
+                {
+                    Console.Clear();
+                    int t2 = Program.teacherlist.FindIndex(user => user.UserName == ProgramUi.TeacherUserSever && user.PassWord == ProgramUi.TeacherPasswordSever);
+                    Console.WriteLine("your EducationPlan is : \n" + Program.teacherlist[t2].TeacherEducationPlan);
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Dumbledore did not set any plan for you !! ");
+
+            }
+            Console.ReadKey();
+        }
+        public static void GreadingToStudents()
+        {
+            Console.Clear();
+            int t2 = Program.teacherlist.FindIndex(user => user.UserName == ProgramUi.TeacherUserSever && user.PassWord == ProgramUi.TeacherPasswordSever);
+            bool condition = true;
+            while (condition == true)
+            {
+
+                Console.WriteLine("Your Students list is : \n ------------------------------- \n" + Program.teacherlist[t2].ClassMember);
+                ERROR1:
+                Console.WriteLine("\nEnter name and family of student that you want to grad ");
+                Console.Write("Enter name : ");
+                string name = Console.ReadLine();
+                Console.Write("Enter lastname : ");
+                string lstname = Console.ReadLine();
+
+               
+
+                if (Program.studentList.Any(p => p.FirstName.Equals(name) && p.Lastname.Equals(lstname)))
+                {
+                    Console.Write("Enter Grade : ");
+                    int grade = Convert.ToInt32(Console.ReadLine());
+
+                    int indexx = Program.studentList.FindIndex(user => user.FirstName == name && user.Lastname == lstname);
+                   
+                    Program.studentList[indexx].Grade += Program.teacherlist[t2].TeacherLesson + " Grade is : " + grade + "\n";
+                    if (grade >= 10)
+                    {
+                        Program.studentList[indexx].passedUnit += Program.teacherlist[t2].TeacherLesson + "\n";
+                    }
+                    Console.WriteLine(" Succssesfuly Scored ");
+                }
+                else
+                {
+                    Console.WriteLine("your entered name or lastname is wrong");
+                    Console.WriteLine("please repeat");
+                    goto ERROR1;
+                }
+
+                Console.WriteLine("Do you want to grade to other student ?\n 1- yes 2- no");
+                int x = Convert.ToInt32(Console.ReadLine());
+                switch (x)
+                {
+                    case 1:
+                        condition = true;
+                        break;
+                    case 2:
+                        condition = false;
+                        break;
+                    default:
+                        condition = true;
+                        break;
+                }
+                
+
+            }
+          
+        }
+       
     }
 }
 //Random rand = new Random();

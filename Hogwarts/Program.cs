@@ -21,7 +21,7 @@ namespace Hogwarts
 
             #region فایل تعریف نمونه
 
-            using (StreamReader file = new StreamReader(@"D:\C#\cods\Project\Hogwarts\file.tsv"))
+            using (StreamReader file = new StreamReader(@"file.tsv")) 
             {
                 string ln;
                 while ((ln = file.ReadLine()) != null)
@@ -45,17 +45,11 @@ namespace Hogwarts
             }
             Student.SetTermNumber();
 
-            Dumbledore admin = new Dumbledore();
-            admin.UserName = "admin";
-            admin.PassWord = "admin";
-            
+            Dumbledore.Admin.UserName = "admin";
+            Dumbledore.Admin.PassWord = "admin";
+
 
             #endregion پایان 
-
-
-
-
-
 
 
             #region پنل ها 
@@ -90,7 +84,8 @@ namespace Hogwarts
 
                                     case 2:
                                         Teacher.setTeacherLesson();
-                                        ProgramUi.help2 = 1;
+                                        ProgramUi.Travelcondition2 = 1;
+                                        Teacher.MakeListLesson();
                                         break;
 
                                     case 3:
@@ -112,9 +107,8 @@ namespace Hogwarts
                                     case 1:
                                         ProgramUi.EducationPlanOfTeacher();
                                         break;
+                                 
                                     case 2:
-                                        break;
-                                    case 3:
                                         panelNumber = ProgramUi.ShowMianMenu();
                                         t2 = false;
                                         break;
@@ -137,7 +131,7 @@ namespace Hogwarts
                                         break;
 
                                     case 2:
-                                        Student.SetListLesson();
+                                       
                                         Student.SetEducationPlanForStudentsByHand();
                                         Console.ReadKey();
                                         break;
@@ -152,16 +146,16 @@ namespace Hogwarts
                             break;
 
                     case 4:
-                        if (ProgramUi.help1 == 1 && ProgramUi.help2 == 1)
-                        {
-                            ProgramUi.StudentTravel();
-                            loop = false;
-                        }
-                        else
-                        {
-                            ProgramUi.StudentTravel();
-                            panelNumber = ProgramUi.ShowMianMenu();
-                        }
+                            if (ProgramUi.Travelcondition1 == 1 && ProgramUi.Travelcondition2 == 1)
+                            {
+                                ProgramUi.StudentTravel();
+                                loop = false;
+                            }
+                            else
+                            {
+                                ProgramUi.StudentTravel();
+                                panelNumber = ProgramUi.ShowMianMenu();
+                            }
                       
                         break;
                     
@@ -169,9 +163,14 @@ namespace Hogwarts
 
                     case 5:  // Exit Panel
                         loop = false;
-                        //loop2 = false;
+                        loop2 = false;
+                        loop3 = false;
                         break;
 
+
+                    case 9:
+                        loop = false;
+                        break;
                     default:
                         ProgramUi.PressWrongKey();
                         panelNumber = ProgramUi.ShowMianMenu();
@@ -201,31 +200,45 @@ namespace Hogwarts
                     case 3:
                         switch (ProgramUi.StudentEducationPanle())
                         {
+
                             case 1:
                                 Student.SetEducationPlanForFirstSemesterStudents();
                                 break;
                             case 2:
-
+                                Student.SetPlanForTerm2ByDefult();
+                                Student.SetPlanForTerm3ByDefult();
+                                Student.SetPlanForTerm4ByDefult();
                                 break;
                         }
                         break;
 
                     case 4:
-                        loop2 = false;
+                      if (ProgramUi.StartYearcondition1 == true && ProgramUi.StartYearcondition2)
+                        {
+                            loop2 = false;
+                        }
+                      else
+                        {
+                            Console.WriteLine(" task are not done yet ");
+                        }
                         break;
                     case 5:
+                        loop2 = false;
+                        loop3 = false;
+                        break;
 
+                    case 9:
                         loop2 = false;
                         break;
 
                     default:
                         ProgramUi.PressWrongKey();
-                        //secondPanels = ProgramUi.EnteringHogwartsPanels();
+                        
                         break;
 
                 }
                 
-            }///////////////////////loop2
+            }///////////////////////  END loop2
 
             
             while (loop3 == true)////////////////////////////////// loop 3 
@@ -243,14 +256,6 @@ namespace Hogwarts
                                         ProgramUi.ReceivedmessagesfromStundets();
                                         break;
                                     case 2:
-                                        ProgramUi.LetterResult();
-                                        break;
-                                    case 3:
-                                        break;
-                                    case 4:
-                                        break;
-                                    case 5:
-                                        //thirdPanels = ProgramUi.FinalPanle();
                                         z1 = false;
                                         break;
                                     
@@ -266,12 +271,12 @@ namespace Hogwarts
                                 switch (ProgramUi.FinalTeacherPanel())  //  teacher  panel
                                 {
                                     case 1:
-                                        
+                                        ProgramUi.EducationPlanOfTeacher();
                                         break;
                                     case 2:
+                                        Teacher.GreadingToStudents();
                                         break;
                                     case 3:
-                                        //thirdPanels = ProgramUi.FinalPanle();
                                         z2 = false;
                                         break;
 
@@ -296,30 +301,28 @@ namespace Hogwarts
                                         ProgramUi.LetterResult();
                                         break;
                                     case 3:
+                                        Student.viewStudentPlan();
                                         break;
                                     case 4:
+                                        Student.viewGrade();
+                                        
                                         break;
                                     case 5:
-                                        break;
-                                    case 6: 
-                                        //thirdPanels = ProgramUi.FinalPanle();
                                         z3 = false;
                                         break;
+                                    
                                 }
                             }
                             break;
                         }
                         break;
+
                     case 4:
-                        Console.WriteLine(" not now ");
-                        break;
-                    case 5:
                         loop3 = false;
                         break;
 
                     default:
                         ProgramUi.PressWrongKey();
-                        //thirdPanels = ProgramUi.FinalPanle();
                         break;
                 }
 
